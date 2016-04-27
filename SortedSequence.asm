@@ -1,9 +1,3 @@
-; Assignment 3 Sort Array
-; Stephen Chan
-; 9419
-; CPSC 240 Assignment 3
-; Partner: Daniel Berumen
-
 
 INCLUDE Irvine32.inc
 
@@ -11,6 +5,9 @@ INCLUDE Irvine32.inc
 .model flat,stdcall
 .stack 4096
 ExitProcess proto,dwExitCode:dword
+
+
+;Variables of String prompts with declared variables. 
 
 .data
 str1 BYTE "CPSC240 Assignment #3  written by: Stephen Chan, Daniel Berumen",0			
@@ -87,7 +84,6 @@ procedure1 PROC USES eax ecx esi, pArray:PTR DWORD, Count:DWORD, maxNum:DWORD
 		loop L1
 	ret
 procedure1 ENDP
-
 
 ;-------------------------------------------------------
 ; procedure2 proc uses eax,ecx,esi
