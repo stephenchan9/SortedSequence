@@ -13,7 +13,7 @@ INCLUDE Irvine32.inc
 ExitProcess proto,dwExitCode:dword
 
 .data
-str1 BYTE "CPSC240 Assignment #3  written by: Stephen Chan, Daniel Berumen",0			;------------------
+str1 BYTE "CPSC240 Assignment #3  written by: Stephen Chan, Daniel Berumen",0			
 str2 BYTE "Step 1: Populate the array with random integers from 0 to 100",0
 str3 BYTE "Array of 10 numbers",0
 str4 BYTE "Index  Data",0
@@ -44,7 +44,6 @@ displayPrompt MACRO str		;Macro displaying string prompts
 	pop edx
 ENDM
 
-
 ;-------------------------------------------------------
 ; displayArray MACRO 
 ; This macro displays the contents of the array
@@ -67,7 +66,6 @@ displayArray MACRO array	;Macro displaying contents of array
 		inc ebx
 		loop L1
 ENDM
-
 
 ;-------------------------------------------------------
 ; procedure1 proc uses eax,ecx,esi
