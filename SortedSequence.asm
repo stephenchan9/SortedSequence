@@ -3,7 +3,7 @@
 ; 9419
 ; CPSC 240 Assignment 3
 ; Partner: Daniel Berumen
-; 
+
 
 INCLUDE Irvine32.inc
 
