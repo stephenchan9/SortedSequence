@@ -6,9 +6,7 @@ INCLUDE Irvine32.inc
 .stack 4096
 ExitProcess proto,dwExitCode:dword
 
-
 ;Variables of String prompts with declared variables. 
-
 .data
 str1 BYTE "CPSC240 Assignment #3  written by: Stephen Chan, Daniel Berumen",0			
 str2 BYTE "Step 1: Populate the array with random integers from 0 to 100",0
@@ -178,7 +176,6 @@ main proc
 
 	INVOKE procedure1,				;Passes array and values in order to assign random values to the array
 		ADDR array,10,100
-	call Crlf
 	displayArray array				;Displays contents of array
 	
 
@@ -191,7 +188,6 @@ main proc
 
 	INVOKE procedure2,				;Passes in array and length of array to bubblesort procedure
 		ADDR array,10
-	call Crlf
 	displayArray array				;Displays contents of array
 
 	call WaitMsg					;Start of Procedure 3 
@@ -202,7 +198,8 @@ Search:
 	displayPrompt str7
 	displayPrompt str8
 	displayArray array
-	displayPrompt str9
+	mov edx, OFFSET str9
+	call WriteString
 	call ReadDec
 	mov userVal,eax
 
