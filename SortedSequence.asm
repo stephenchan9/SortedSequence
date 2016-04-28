@@ -193,8 +193,8 @@ main proc
 	call WaitMsg					;Start of Procedure 3 
 	call Clrscr
 
-Search:	
-	displayPrompt str1
+Search:								;This loop prompts for value to be searched
+	displayPrompt str1		
 	displayPrompt str7
 	displayPrompt str8
 	displayArray array
@@ -204,14 +204,14 @@ Search:
 	mov userVal,eax
 
 	INVOKE procedure3,
-		ADDR array,10,userVal
+		ADDR array,10,userVal		;Calls the binary search procedure
 	cmp eax,-1
-	jne Success
-	displayPrompt str11			;Prompt displays if not found
-	jmp RepeatSearch
+	jne Success						;Jumps if value is found
+	displayPrompt str11				;Prompt displays if not found
+	jmp RepeatSearch				;Jumps to repeat the search
 
 Success:
-	displayPrompt str10
+	displayPrompt str10				;Displays the Value to the screen
 	displayPrompt str4
 	call WriteDec
 	mov edx, OFFSET space
@@ -224,14 +224,14 @@ Success:
 RepeatSearch:
 	mov edx, OFFSET str12		;Header prompting the user to enter q to quit or enter any key to continue
 	call WriteString 
-	call ReadChar				;Reads the user input
+	call ReadChar				
 
 	cmp al,'q'					;Compares user with lower case q character
-	je quit						;Jumps to loop to exit program if equal
+	je quit						
 	cmp al,'Q'					;Compares with Upper case Q
-	je quit						;Jumps to loop to exit program if equal
+	je quit						
 	
-	call Crlf					;endline
+	call Crlf					
 	call Clrscr					;Clear the screen
 	jnz Search					;Loop back to Search
 
